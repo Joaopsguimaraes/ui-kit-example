@@ -52,6 +52,9 @@ export const Flex = styled("div", {
       start: {
         justifyContent: "flex-start",
       },
+      end:{
+        justifyContent: "flex-end",
+      },
       center: {
         justifyContent: "flex-center",
       },

@@ -127,6 +127,31 @@ export const { styled, css } = createStitches({
         transitions:{
             true:"all 400ms ease-in-out",
         },
+
+    },
+    utils:{
+        paddingX: (value:string) => ({
+            paddingLeft: value,
+            paddingRight: value
+        }),
+        paddingY: (value:string) => ({
+            paddingTop: value,
+            paddingBottom: value
+        }),
+        marginX: (value:string) => ({
+            marginLeft: value,
+            marginRight: value
+        }),
+        marginY: (value:string) => ({
+            marginTop: value,
+            marginBottom: value
+        }),
+        width: (value:string) =>({
+            width: value
+        }),
+        height: (value:string) =>({
+            height: value
+        })
     }
 
 })

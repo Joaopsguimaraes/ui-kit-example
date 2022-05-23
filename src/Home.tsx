@@ -12,6 +12,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import imgHome from "./assets/media.svg";
 import logoHome from "./assets/logo.svg";
+import { DialogModal } from "./components/Dialog";
 
 
 export function Home() {
@@ -67,11 +68,11 @@ export function Home() {
             textAlign="center"
           >
             CREATE YOURS APP WITH{" "}
-            <Span color="indigo" fontWeight="bold">
+            <Span color="blue" fontWeight="bold">
               EASE
             </Span>{" "}
             AND{" "}
-            <Span color="indigo" fontWeight="bold">
+            <Span color="blue" fontWeight="bold">
               SPEED
             </Span>
           </Heading>
@@ -108,8 +109,8 @@ export function Home() {
             wrap="wrap"
           >
             <Button
-              color="darkIndigo"
-              size="xlg"
+              color="blue"
+              size="lg"
               rounded="sm"
               shadow="md"
             >
@@ -117,11 +118,11 @@ export function Home() {
               GET STARTED
             </Button>
             <Button
-              color="indigo"
-              size="xlg"
+              color="blue"
+              size="lg"
               rounded="sm"
-              variant="outline"
               shadow="sm"
+              variant="outline"
             >
               <GithubLogo size={22} />
               GitHub

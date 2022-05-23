@@ -4,7 +4,7 @@ export interface ButtonProps{
   label?: string;
   variant?: "solid" | "outline" | "ghost";
   size?: "sm" | "lg" | "xlg";
-  color?: "blue" | "gray" | "indigo" | "darkIndigo" | "darkBlue";
+  color?: "blue" | "gray" | "indigo";
   rounded?: "none" | "sm" | "lg" | "xs" | "full";
   shadow?: "sm" | "md" | "lg" | "xl";
   width?: "sm" | "md" | "lg" | "xlg" | "auto" | "full";
@@ -19,7 +19,7 @@ export const ButtonStyle = styled("button", {
   cursor: "pointer",
   padding: "$2",
   fontSize: "$md",
-  fontWeight: "$medium",
+  fontWeight: "$regular",
   fontFamily: "$roboto",
   display:"flex",
   alignItems:"center",
@@ -33,8 +33,8 @@ export const ButtonStyle = styled("button", {
       },
       lg: {
         width: "$auto",
-        padding: "$2",
-        fontSize: "$md",
+        padding: "$3",
+        fontSize: "$lg",
       },
       xlg: {
         width: "$auto",
@@ -45,49 +45,17 @@ export const ButtonStyle = styled("button", {
     color: {
       blue: {
         background: "$blue3",
-        color: "$blue11",
+        color: "$blue12",
         borderColor: "$blue7",
         borderWidth: "$thick",
         borderStyle: "$solid",
-        "&:hover": {
+        "&:hover , &:focus": {
           background: "$blue5",
-          color: "$blue11",
-          borderColor: "$blue7",
+          borderColor: "$blue8",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
-        },
-        "&:focus": {
-          background: "$blue5",
-          color: "$blue11",
-          borderColor: "$blue7",
-          borderWidth: "$thick",
-          borderStyle: "$solid",
-          transition: "$true",
-        },
-      },
-      darkBlue: {
-        background: "$blue9",
-        color: "$blue2",
-        borderColor: "$blue10",
-        borderWidth: "$thick",
-        borderStyle: "$solid",
-        "&:hover": {
-          background: "$blue10",
-          color: "$blue2",
-          borderColor: "$blue11",
-          borderWidth: "$thick",
-          borderStyle: "$solid",
-          transition: "$true",
-        },
-        "&:focus": {
-          background: "$blue10",
-          color: "$blue2",
-          borderColor: "$blue11",
-          borderWidth: "$thick",
-          borderStyle: "$solid",
-          transition: "$true",
-        },
+        }
       },
       gray: {
         background: "$gray3",
@@ -95,22 +63,13 @@ export const ButtonStyle = styled("button", {
         borderColor: "$gray6",
         borderWidth: "$thick",
         borderStyle: "$solid",
-        "&:hover": {
+        "&:hover, &:focus": {
           background: "$gray5",
-          color: "$gray12",
-          borderColor: "$gray6",
+          borderColor: "$gray8",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
-        },
-        "&:focus": {
-          background: "$gray5",
-          color: "$gray12",
-          borderColor: "$gray7",
-          borderWidth: "$thick",
-          borderStyle: "$solid",
-          transition: "$true",
-        },
+        }
       },
       indigo: {
         background: "$indigo3",
@@ -118,49 +77,28 @@ export const ButtonStyle = styled("button", {
         borderColor: "$indigo6",
         borderWidth: "$thick",
         borderStyle: "$solid",
-        "&:hover": {
-          background: "$indigo5",
-          color: "$indigo11",
-          borderColor: "$indigo7",
-          borderWidth: "$thick",
-          borderStyle: "$solid",
-          transition: "$true",
-        },
-        "&:focus": {
-          background: "$indigo5",
-          color: "$indigo11",
-          borderColor: "$indigo7",
-          borderWidth: "$thick",
-          borderStyle: "$solid",
-          transition: "$true",
-        },
-      },
-      darkIndigo: {
-        background: "$indigo10",
-        color: "$indigo1",
-        borderColor: "$indigo11",
-        borderWidth: "$thick",
-        borderStyle: "$solid",
         "&:hover, &:focus": {
-          background: "$indigo11",
-          color: "$indigo2",
+          background: "$indigo5",
+          borderColor: "$indigo8",
+          borderWidth: "$thick",
+          borderStyle: "$solid",
           transition: "$true",
-        },
-      },
+        }
+      }
     },
     variant: {
       solid:{
 
       },
       outline: {
-        background: "transparent",
+        background: "none",
       },
       ghost: {
-        background: "transparent",
-        border: "transparent",
+        background: "none",
+        border: "none",
         fontWeight:"$bold",
         "&:hover, &:focus": {
-          border: "transparent",
+          border: "none",
         }
       },
     },
