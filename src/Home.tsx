@@ -5,10 +5,13 @@ import { Link } from "./components/Link";
 import { Text } from "./components/Text";
 import { Nav } from "./components/Nav";
 import { Span } from "./components/Span";
+import { Flex } from "./components/Flex";
+import { Image } from "./components/Image";
 import { ArrowRight, GithubLogo } from "phosphor-react";
-import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import imgHome from "./assets/media.svg";
-import logoHome from "./assets/react.svg";
+import logoHome from "./assets/logo.svg";
 
 
 export function Home() {
@@ -18,37 +21,57 @@ export function Home() {
         display="flex"
         AlignItems="itemsCenter"
         justifyContent="justifyAround"
-        background="gray"
       >
-        <img src={logoHome} alt="logo react" />
-        <Link color="gray" href="#">
-          <FaLinkedin size={20} />
-        </Link>
-        <Link color="gray" href="#">
-          <FaDiscord size={20} />
-        </Link>
-        <Link
-          color="gray"
-          href="https://github.com/Joaopsguimaraes"
-          target="_blank"
-        >
-          <FaGithub size={20} />
-        </Link>
+        <Image src={logoHome} alt="logo lorem ipsum" size="md" />
+        <Flex>
+          <Link
+            color="gray"
+            href="https://www.linkedin.com/in/joaovpsguimaraes/"
+            target="_blank"
+            hoverIcons="true"
+          >
+            <FaLinkedin size={20} />
+          </Link>
+          <Link
+            color="gray"
+            href="https://www.instagram.com/joaov.ps/"
+            target="_blank"
+            hoverIcons="true"
+          >
+            <FaInstagram size={20} />
+          </Link>
+          <Link
+            color="gray"
+            href="malito.psjoaovictor@gmail.com"
+            target="_blank"
+            hoverIcons="true"
+          >
+            <SiGmail size={20} />
+          </Link>
+          <Link
+            color="gray"
+            href="https://github.com/Joaopsguimaraes"
+            target="_blank"
+            hoverIcons="true"
+          >
+            <FaGithub size={20} />
+          </Link>
+        </Flex>
       </Nav>
-      <Container
-        display="flex"
-        alignItems="center"
-        width="100vw"
-        height="auto"
-      >
-        <Container width="large" margin="center">
-          <Heading color="gray" size="lg" marginTop={2} marginBottom={2} textAlign="center">
+      <Container display="flex" alignItems="center" width="100vw" height="auto">
+        <Container width="lg" margin="center">
+          <Heading
+            color="gray"
+            size="lg"
+            marginBottom={2}
+            textAlign="center"
+          >
             CREATE YOURS APP WITH{" "}
-            <Span color="indigo" fontWeight="true">
+            <Span color="indigo" fontWeight="bold">
               EASE
             </Span>{" "}
             AND{" "}
-            <Span color="indigo" fontWeight="true">
+            <Span color="indigo" fontWeight="bold">
               SPEED
             </Span>
           </Heading>
@@ -72,33 +95,33 @@ export function Home() {
             <img
               src={imgHome}
               alt="image pagina inicial"
-              style={{ width: "38%", height: "auto" }}
+              style={{ width: "35%", height: "auto" }}
             />
           </Container>
 
           <Container
             display="flex"
             alignItems="center"
-            width="medium"
+            width="md"
             margin="center"
             justifyContent="justifyBetween"
             wrap="wrap"
           >
             <Button
-              color="blue"
+              color="darkIndigo"
               size="xlg"
               rounded="sm"
-              style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}
+              shadow="md"
             >
               <ArrowRight size={22} />
               GET STARTED
             </Button>
             <Button
-              color="blue"
+              color="indigo"
               size="xlg"
               rounded="sm"
               variant="outline"
-              style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}
+              shadow="sm"
             >
               <GithubLogo size={22} />
               GitHub

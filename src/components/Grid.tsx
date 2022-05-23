@@ -1,73 +1,34 @@
 import { styled } from "../styles/Theme";
 
-export const Flex = styled("div", {
-  display: "flex",
+export const Grid = styled("div", {
+  display: "grid",
   variants: {
-    flexDirection: {
-      row: {
-        flexDirection: "row",
+    templateColumns: {
+      2: {
+        gridTemplateColumns: "repeat(2, 1fr)",
       },
-      column: {
-        flexDirection: "column",
+      3: {
+        gridTemplateColumns: "repeat(3, 1fr)",
       },
-    },
-    alignItems: {
-      stretch: {
-        alignItems: "stretch",
+      4: {
+        gridTemplateColumns: "repeat(4, 1fr)",
       },
-      center: {
-        alignItems: "center",
-      },
-      start: {
-        alignItems: "flex-start",
-      },
-      end: {
-        alignItems: "flex-end",
-      },
-      baseline: {
-        alignItems: "flex-baseline",
+      5: {
+        gridTemplateColumns: "repeat(5, 1fr)",
       },
     },
-    alignContent: {
-      stretch: {
-        alignContent: "stretch",
+    templateRows: {
+      2: {
+        gridTemplateRows: "repeat(2, 1fr)",
       },
-      start: {
-        alignContent: "flex-start",
+      3: {
+        gridTemplateRows: "repeat(3, 1fr)",
       },
-      end: {
-        alignContent: "flex-end",
+      4: {
+        gridTemplateRows: "repeat(4, 1fr)",
       },
-      center: {
-        alignContent: "center",
-      },
-      spaceBetween: {
-        alignContent: "space-between",
-      },
-      spaceAround: {
-        alignContent: "space-around",
-      },
-    },
-    justifyContent: {
-      start: {
-        justifyContent: "flex-start",
-      },
-      center: {
-        justifyContent: "flex-center",
-      },
-      spaceBetween: {
-        justifyContent: "space-between",
-      },
-      spaceAround: {
-        justifyContent: "space-around",
-      },
-    },
-    flexWrap: {
-      wrap: {
-        flexWrap: "wrap",
-      },
-      nowrap: {
-        flexWrap: "nowrap",
+      5: {
+        gridTemplateRows: "repeat(5, 1fr)",
       },
     },
     gap: {
@@ -84,38 +45,118 @@ export const Flex = styled("div", {
         gap: "$16",
       },
     },
+    justifyContent: {
+      start: {
+        justifyContent: "start",
+      },
+      end: {
+        justifyContent: "end",
+      },
+      stretch: {
+        justifyContent: "stretch",
+      },
+      spaceAround: {
+        justifyContent: "space-around",
+      },
+      spaceBetween: {
+        justifyContent: "space-between",
+      },
+      spaceEvenly: {
+        justifyContent: "space-evenly",
+      },
+      center: {
+        justifyContent: "center ",
+      },
+    },
+    alignContent: {
+      start: {
+        alignContent: "start",
+      },
+      end: {
+        alignContent: "end",
+      },
+      stretch: {
+        alignContent: "stretch",
+      },
+      spaceAround: {
+        alignContent: "space-around",
+      },
+      spaceBetween: {
+        alignContent: "space-between",
+      },
+      spaceEvenly: {
+        alignContent: "space-evenly",
+      },
+      center: {
+        alignContent: "center ",
+      },
+    },
+    justifyItems: {
+      start: {
+        justifyItems: "start",
+      },
+      end: {
+        justifyItems: "end",
+      },
+      center: {
+        justifyItems: "center",
+      },
+      stretch: {
+        justifyItems: "stretch",
+      },
+    },
+    alignItems: {
+      start: {
+        alignItems: "start",
+      },
+      end: {
+        alignItems: "end",
+      },
+      center: {
+        alignItems: "center",
+      },
+      stretch: {
+        alignItems: "stretch",
+      },
+    },
     width: {
-      1: {
+      sm: {
         width: "25%",
       },
-      2: {
+      md: {
         width: "50%",
       },
-      3: {
+      lg: {
         width: "75%",
+      },
+      xlg: {
+        width: "90%",
       },
       full: {
         width: "100%",
       },
-      auto: {
-        width: "auto",
+      "100vw": {
+        width: "100vw",
       },
     },
     height: {
-      1: {
+      sm: {
         height: "25%",
       },
-      2: {
+      md: {
         height: "50%",
       },
-      3: {
+      lg: {
         height: "75%",
-      },
-      full: {
-        height: "100%",
       },
       auto: {
         height: "auto",
+      },
+      full: {
+        height: "full",
+      },
+      "100vh": {
+        height: "100vh",
       },
     },
     margin: {

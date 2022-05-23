@@ -1,6 +1,6 @@
 import { styled } from "../styles/Theme";
 
-export const Container = styled("div", {
+export const Container = styled("section", {
   width: "100%",
   variants: {
     background: {
@@ -15,13 +15,13 @@ export const Container = styled("div", {
       },
     },
     width: {
-      small: {
+      sm: {
         width: "25%",
       },
-      medium: {
+      md: {
         width: "50%",
       },
-      large: {
+      lg: {
         width: "75%",
       },
       xlg:{
@@ -35,13 +35,13 @@ export const Container = styled("div", {
       }
     },
     height: {
-      1:{
+      sm:{
         height: "25%"
       },
-      2:{
+      md:{
         height:"50%"
       },
-      3:{
+      lg:{
         height:"75%"
       },
       "auto":{
@@ -62,6 +62,9 @@ export const Container = styled("div", {
       "mx-1": {
         marginLeft: "$4",
         marginRight: "$4",
+      },
+      "m-1":{
+        margin: "$4",
       },
       center: {
         margin: "auto",

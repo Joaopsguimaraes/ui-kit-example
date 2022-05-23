@@ -6,16 +6,25 @@ export const Span = styled("span",{
             blue:{
                 color:"$blue11"
             },
+            darkBlue: {
+                color:"$blue12"
+            },
             gray:{
                 color:"$gray11"
             },
             indigo:{
                 color:"$indigo11"
+            },
+            darkIndigo: {
+                color:"$indigo12"
             }
         },
         fontWeight:{
-            true:{
+            bold:{
                 fontWeight:"bold"
+            },
+            black:{
+                fontWeight:"$black"
             }
         }
     }

@@ -1,12 +1,29 @@
 import { styled } from "../styles/Theme";
 
-export const Button = styled("button", {
+export interface ButtonProps{
+  label?: string;
+  variant?: "solid" | "outline" | "ghost";
+  size?: "sm" | "lg" | "xlg";
+  color?: "blue" | "gray" | "indigo" | "darkIndigo" | "darkBlue";
+  rounded?: "none" | "sm" | "lg" | "xs" | "full";
+  shadow?: "sm" | "md" | "lg" | "xl";
+  width?: "sm" | "md" | "lg" | "xlg" | "auto" | "full";
+  children?: React.ReactNode;
+  style?: any;
+
+}
+
+
+export const ButtonStyle = styled("button", {
   width: "$auto",
   cursor: "pointer",
   padding: "$2",
   fontSize: "$md",
   fontWeight: "$medium",
   fontFamily: "$roboto",
+  display:"flex",
+  alignItems:"center",
+  gap: "0.25rem",
   variants: {
     size: {
       sm: {
@@ -21,38 +38,52 @@ export const Button = styled("button", {
       },
       xlg: {
         width: "$auto",
-        padding: "$6",
-        fontSize: "$lg",
-      },
-    },
-    variant: {
-      outline: {
-        background: "none",
-      },
-      ghost: {
-        background: "none",
-        border: "none",
+        padding: "$4",
+        fontSize: "$xl",
       },
     },
     color: {
       blue: {
         background: "$blue3",
-        color: "$blue12",
-        borderColor: "$blue6",
+        color: "$blue11",
+        borderColor: "$blue7",
         borderWidth: "$thick",
         borderStyle: "$solid",
         "&:hover": {
           background: "$blue5",
-          color: "$blue12",
-          borderColor: "$blue6",
+          color: "$blue11",
+          borderColor: "$blue7",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
         },
         "&:focus": {
           background: "$blue5",
-          color: "$blue12",
+          color: "$blue11",
           borderColor: "$blue7",
+          borderWidth: "$thick",
+          borderStyle: "$solid",
+          transition: "$true",
+        },
+      },
+      darkBlue: {
+        background: "$blue9",
+        color: "$blue2",
+        borderColor: "$blue10",
+        borderWidth: "$thick",
+        borderStyle: "$solid",
+        "&:hover": {
+          background: "$blue10",
+          color: "$blue2",
+          borderColor: "$blue11",
+          borderWidth: "$thick",
+          borderStyle: "$solid",
+          transition: "$true",
+        },
+        "&:focus": {
+          background: "$blue10",
+          color: "$blue2",
+          borderColor: "$blue11",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
@@ -83,26 +114,54 @@ export const Button = styled("button", {
       },
       indigo: {
         background: "$indigo3",
-        color: "$indigo12",
+        color: "$indigo11",
         borderColor: "$indigo6",
         borderWidth: "$thick",
         borderStyle: "$solid",
         "&:hover": {
           background: "$indigo5",
-          color: "$indigo12",
-          borderColor: "$indigo6",
+          color: "$indigo11",
+          borderColor: "$indigo7",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
         },
         "&:focus": {
           background: "$indigo5",
-          color: "$indigo12",
+          color: "$indigo11",
           borderColor: "$indigo7",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
         },
+      },
+      darkIndigo: {
+        background: "$indigo10",
+        color: "$indigo1",
+        borderColor: "$indigo11",
+        borderWidth: "$thick",
+        borderStyle: "$solid",
+        "&:hover, &:focus": {
+          background: "$indigo11",
+          color: "$indigo2",
+          transition: "$true",
+        },
+      },
+    },
+    variant: {
+      solid:{
+
+      },
+      outline: {
+        background: "transparent",
+      },
+      ghost: {
+        background: "transparent",
+        border: "transparent",
+        fontWeight:"$bold",
+        "&:hover, &:focus": {
+          border: "transparent",
+        }
       },
     },
     rounded: {
@@ -120,6 +179,20 @@ export const Button = styled("button", {
       },
       full: {
         borderRadius: "$full",
+      },
+    },
+    shadow: {
+      sm: {
+        boxShadow: "$shadowSm",
+      },
+      md: {
+        boxShadow: "$shadowMd",
+      },
+      lg: {
+        boxShadow: "$shadowLg",
+      },
+      xl: {
+        boxShadow: "$shadowXl",
       },
     },
     width: {
@@ -170,6 +243,9 @@ export const Button = styled("button", {
       "mx-1": {
         marginLeft: "$4",
         marginRight: "$4",
+      },
+      "m-1": {
+        margin: "$4",
       },
       center: {
         margin: "auto",
@@ -272,6 +348,9 @@ export const Button = styled("button", {
         paddingLeft: "$4",
         paddingRight: "$4",
       },
+      "p-1": {
+        padding: "$4",
+      },
     },
     alignSelf: {
       start: {
@@ -292,3 +371,18 @@ export const Button = styled("button", {
     },
   },
 });
+
+export function Button({label, variant, size, color, rounded, children}:ButtonProps){
+  return(
+    <ButtonStyle
+      variant={variant}
+      size={size}
+      color={color}
+      rounded={rounded}
+    >
+      {label}
+      {children}
+    </ButtonStyle>
+  )
+}
+

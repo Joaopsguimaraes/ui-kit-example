@@ -1,61 +1,128 @@
 import { styled } from "../styles/Theme";
 
-export const Text = styled("p", {
+export interface InputProps {
+  label: string | number;
+  size: "sm" | "lg" | "xlg";
+  color: "blue" | "indigo" | "gray";
+  variant: "outline" | "filled" | "flushed" | "unstyled";
+  borderRadius:"xs" | "sm" | "lg" | "full";
+  width: "sm" | "lg" | "xlg" | "auto" | "full";
+  placeholder: string;
+  type: string | number;
+}
+
+export const InputStyle = styled("input", {
+  padding: "$2",
   fontSize: "$md",
   fontFamily: "$roboto",
-  fontWeight: "$regular",
-  lineHeight: "$basic",
-  color: "$gray12",
-  textAlign: "justify",
+  borderWidth: "$thick",
+  background: "none",
+  borderStyle: "$solid",
   variants: {
-    size: {
-      sm: {
-        fontSize: "$sm",
-      },
-      md: {
-        fontSize: "$md",
-      },
-      lg: {
-        fontSize: "$lg",
-      },
-      xlg: {
-        fontSize: "$2xl",
-      },
-      xxlg: {
-        fontSize: "$4xl",
-      },
-      title: {
-        fontSize: "$5xl",
-      },
-    },
-    textAlign: {
-      left: {
-        textAlign: "left",
-      },
-      right: {
-        textAlign: "right",
-      },
-      center: {
-        textAlign: "center",
-      },
-      justify: {
-        textAlign: "justify",
-      },
-    },
-    bold: {
-      true: {
-        fontWeight: "$bold",
-      },
-    },
     color: {
       blue: {
-        color: "$blue11",
-      },
-      gray: {
-        color: "$gray12",
+        borderColor: "$blue8",
+        color: "$blue12",
       },
       indigo: {
-        color: "$indigo11",
+        borderColor: "$indigo8",
+        color: "$indigo12",
+      },
+      gray:{
+        borderColor:"$gray11",
+        color:"$gray12"
+      }
+    },
+    size: {
+      sm: {
+        padding: "$1",
+        fontSize: "$sm",
+      },
+      lg: {
+        padding: "$3",
+        fontSize: "$md",
+      },
+      xlg: {
+        padding: "$4",
+        fontSize: "$lg",
+      },
+    },
+    variant: {
+      outline: {
+        borderWidth: "$thick",
+        background: "none",
+        borderStyle: "$solid",
+        borderRadius: "$sm",
+      },
+      filled: {
+        border: "none",
+        background: "$gray3",
+      },
+      flushed: {
+        borderWidth: "$thick",
+        borderStyle: "$solid",
+        borderRadius: "none",
+        borderTop: "none",
+        borderLeft: "none",
+        borderRight: "none",
+      },
+      unstyled: {},
+    },
+    borderRadius:{
+      xs:{
+        borderRadius: "$xs"
+      },
+      sm:{
+        borderRadius: "$sm"
+      },
+      md:{
+        borderRadius:"$md"
+      },
+      lg:{
+        borderRadius: "$lg"
+      },
+      "full":{
+        borderRadius: "$full"
+      }
+    },
+    width: {
+      sm: {
+        width: "20%",
+      },
+      md: {
+        width: "40%",
+      },
+      lg: {
+        width: "60%",
+      },
+      xlg: {
+        width: "80%",
+      },
+      auto: {
+        width: "auto",
+      },
+      full: {
+        width: "100%",
+      },
+    },
+    height: {
+      sm: {
+        height: "20%",
+      },
+      md: {
+        height: "40%",
+      },
+      lg: {
+        height: "60%",
+      },
+      xlg: {
+        height: "80%",
+      },
+      auto: {
+        height: "auto",
+      },
+      full: {
+        height: "100%",
       },
     },
     margin: {
@@ -188,3 +255,24 @@ export const Text = styled("p", {
     },
   },
 });
+
+export function Input({
+  size,
+  color,
+  variant,
+  width,
+  label,
+  placeholder,
+  type
+}: InputProps) {
+  return (
+    <InputStyle
+      size={size}
+      variant={variant}
+      width={width}
+      value={label}
+      color={color}
+      placeholder={placeholder}
+    />
+  );
+}
