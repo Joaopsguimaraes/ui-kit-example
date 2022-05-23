@@ -4,16 +4,16 @@ export default create({
     base:'light',
     colorSecondary:"hsl(226, 75.4%, 74.5%)",
 
-    appBg:'#e6e6e6',
-    appContentBg: '#e6e6e6',
-    appBorderColor: 'hsl(226, 75.4%, 74.5%)',
+    appBg:'#fcfcfc',
+    appContentBg: '#fcfcfc',
+    appBorderColor: '#3451b2',
 
-    textColor: "#000",
+    textColor: "#101d46",
 
-    barTextColor: '#222',
-    barSelectedColor: '#e6e6e6',
-    barBg: '#e4e4e4',
+    barTextColor: '#101d46',
+    barSelectedColor: '#101d46',
+    barBg: '#f8f8f8',
 
-    brandTitle: 'Joao Guimaraes UI Docs',
+    brandTitle: 'Lorem UI Docs',
     brandUrl:'https://github.com/Joaopsguimaraes',
 })
