@@ -1,15 +1,5 @@
 import { styled } from "../styles/Theme";
 
-export interface TextProps {
-  label?: string;
-  size?: "sm" | "md" | "lg" | "xlg" | "xxlg";
-  textAlign?: "left" | "right" | "center" | "justify";
-  fontFamily?: "robot" | "poppins" | "inter";
-  bold?: "true";
-  color?: "blue" | "darkBlue" | "gray" | "indigo" | "darkIndigo";
-  children?: React.ReactNode;
-}
-
 export const TextStyle = styled("p", {
   fontSize: "$md",
   fontFamily: "$roboto",
@@ -38,16 +28,16 @@ export const TextStyle = styled("p", {
         fontSize: "$5xl",
       },
     },
-    fontFamily:{
-      roboto:{
-        fontFamily: "$roboto"
+    fontFamily: {
+      roboto: {
+        fontFamily: "$roboto",
       },
       poppins: {
-        fontFamily:"$poppins"
+        fontFamily: "$poppins",
       },
-      inter:{
-        fontFamily:"$inter"
-      }
+      inter: {
+        fontFamily: "$inter",
+      },
     },
     textAlign: {
       left: {
@@ -216,15 +206,19 @@ export const TextStyle = styled("p", {
   },
 });
 
-export function Text({label, size, textAlign, bold, children}: TextProps){
+export interface TextProps {
+  size?: "sm" | "md" | "lg" | "xlg" | "xxlg";
+  textAlign?: "left" | "right" | "center" | "justify";
+  fontFamily?: "robot" | "poppins" | "inter";
+  bold?: "true";
+  color?: "blue" | "darkBlue" | "gray" | "indigo" | "darkIndigo";
+  children?: React.ReactNode;
+}
+
+export function Text({ size, textAlign, bold, children }: TextProps) {
   return (
-    <TextStyle
-      size={size}
-      textAlign={textAlign}
-      bold={bold}
-    >
-      {label}
+    <TextStyle size={size} textAlign={textAlign} bold={bold}>
       {children}
     </TextStyle>
-  )
+  );
 }

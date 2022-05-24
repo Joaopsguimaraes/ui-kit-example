@@ -1,16 +1,5 @@
 import { styled } from "../styles/Theme";
 
-export interface InputProps {
-  label: string | number;
-  size: "sm" | "lg" | "xlg";
-  color: "blue" | "indigo" | "gray";
-  variant: "outline" | "filled" | "flushed" | "unstyled";
-  borderRadius:"xs" | "sm" | "lg" | "full";
-  width: "sm" | "lg" | "xlg" | "auto" | "full";
-  placeholder: string;
-  type: string | number;
-}
-
 export const InputStyle = styled("input", {
   padding: "$2",
   fontSize: "$md",
@@ -28,10 +17,10 @@ export const InputStyle = styled("input", {
         borderColor: "$indigo8",
         color: "$indigo12",
       },
-      gray:{
-        borderColor:"$gray11",
-        color:"$gray12"
-      }
+      gray: {
+        borderColor: "$gray11",
+        color: "$gray12",
+      },
     },
     size: {
       sm: {
@@ -68,22 +57,22 @@ export const InputStyle = styled("input", {
       },
       unstyled: {},
     },
-    borderRadius:{
-      xs:{
-        borderRadius: "$xs"
+    borderRadius: {
+      xs: {
+        borderRadius: "$xs",
       },
-      sm:{
-        borderRadius: "$sm"
+      sm: {
+        borderRadius: "$sm",
       },
-      md:{
-        borderRadius:"$md"
+      md: {
+        borderRadius: "$md",
       },
-      lg:{
-        borderRadius: "$lg"
+      lg: {
+        borderRadius: "$lg",
       },
-      "full":{
-        borderRadius: "$full"
-      }
+      full: {
+        borderRadius: "$full",
+      },
     },
     width: {
       sm: {
@@ -256,6 +245,16 @@ export const InputStyle = styled("input", {
   },
 });
 
+export interface InputProps {
+  label: string | number;
+  size: "sm" | "lg" | "xlg";
+  color: "blue" | "indigo" | "gray";
+  variant: "outline" | "filled" | "flushed" | "unstyled";
+  borderRadius: "xs" | "sm" | "lg" | "full";
+  width: "sm" | "lg" | "xlg" | "auto" | "full";
+  placeholder: string;
+}
+
 export function Input({
   size,
   color,
@@ -263,7 +262,6 @@ export function Input({
   width,
   label,
   placeholder,
-  type
 }: InputProps) {
   return (
     <InputStyle

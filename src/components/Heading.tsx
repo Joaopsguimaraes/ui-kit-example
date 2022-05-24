@@ -1,16 +1,22 @@
 import { styled } from "../styles/Theme";
 
-export const Heading = styled("h1", {
-  fontSize: "$2xl",
+export const HeadingStyle = styled("h1", {
+  fontSize: "$3xl",
   fontFamily: "$poppins",
-  fontWeight: "$bold",
+  fontWeight: "$regular",
   variants: {
     size: {
       sm: {
-        fontSize: "$4xl",
+        fontSize: "$2xl",
+      },
+      md: {
+        fontSize: "$3xl",
       },
       lg: {
         fontSize: "$5xl",
+      },
+      xlg: {
+        fontSize: "$6xl",
       },
     },
     textAlign: {
@@ -30,6 +36,9 @@ export const Heading = styled("h1", {
     bold: {
       true: {
         fontWeight: "$bold",
+      },
+      false: {
+        fontWeight: "$regular",
       },
     },
     color: {
@@ -173,3 +182,36 @@ export const Heading = styled("h1", {
     },
   },
 });
+
+export interface HeadingProps {
+  size?: "sm" | "lg" | "xlg";
+  color?: "blue" | "gray" | "indigo";
+  bold?: "true" | "false";
+  textAlign?: "left" | "right" | "center" | "justify";
+  marginTop?: 1 | 2 | 3;
+  marginBottom?: 1 | 2 | 3;
+  children?: React.ReactNode;
+}
+
+export function Heading({
+  size,
+  color,
+  bold,
+  textAlign,
+  children,
+  marginTop,
+  marginBottom,
+}: HeadingProps) {
+  return (
+    <HeadingStyle
+      size={size}
+      color={color}
+      bold={bold}
+      textAlign={textAlign}
+      marginTop={marginTop}
+      marginBottom={marginBottom}
+    >
+      {children}
+    </HeadingStyle>
+  );
+}

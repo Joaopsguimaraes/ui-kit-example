@@ -6,18 +6,16 @@ import { Button, ButtonProps } from "../components/Button";
 
 
 export default {
-  // 👇 The title prop is optional.
-  title: "Button",
+  title: "Components/Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-//👇 We create a “template” of how args map to rendering
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: "Button",
+  children: "Button",
   color: "blue",
   rounded:"sm",
 };
@@ -25,8 +23,8 @@ Primary.args = {
 export const Secondary = Template.bind({});
 
 Secondary.args = {
-    label: "Button",
-    color: "blue",
-    variant:"outline",
-    rounded:"sm",
+    children: "Button",
+    color: "gray",
+    variant:"ghost",
+    rounded:"none",
 }

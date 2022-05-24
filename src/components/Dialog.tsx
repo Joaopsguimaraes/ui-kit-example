@@ -3,11 +3,10 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "./Button";
 import { Flex } from "./Flex";
 
-
 export const overlay = css({
   position: "fixed",
   inset: 0,
-  backgroundColor: "rgba(0,0,0,0.3)",
+  backgroundColor: "rgba(0,0,0,0.2)",
 });
 
 export const content = css({
@@ -39,17 +38,15 @@ export const description = css({
 export const button = css({
   width: "auto",
   cursor: "pointer",
-  padding: "$2",
+  padding: "$1",
   fontSize: "$md",
   fontWeight: "$medium",
   fontFamily: "$roboto",
-  borderRadius: "$sm",
-  boxShadow: "$shadowMd",
   variants: {
     color: {
       blue: {
         background: "$blue3",
-        color: "$blue12",
+        color: "$blue11",
         borderColor: "$blue7",
         borderWidth: "$thick",
         borderStyle: "$solid",
@@ -75,9 +72,9 @@ export const button = css({
           transition: "$true",
         },
       },
-      indigo:{
+      indigo: {
         background: "$indigo3",
-        color: "$indigo12",
+        color: "$indigo11",
         borderColor: "$indigo6",
         borderWidth: "$thick",
         borderStyle: "$solid",
@@ -87,8 +84,27 @@ export const button = css({
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
-        }
-      }
+        },
+      },
+    },
+    variant: {
+      solid: {},
+      outline: {
+        background: "none",
+      },
+      ghost: {
+        background: "none",
+        fontWeight: "$bold",
+        borderRadius: "none",
+        borderTop: "none",
+        borderLeft: "none",
+        borderRight: "none",
+        "&:hover, &:focus": {
+          borderTop: "none",
+          borderLeft: "none",
+          borderRight: "none",
+        },
+      },
     },
   },
 });
@@ -114,25 +130,60 @@ export const buttonClose = css({
     borderStyle: "$solid",
     transition: "$true",
   },
+  variants: {
+    size: {
+      sm: {
+        width: "$auto",
+        padding: "$1",
+        fontSize: "$sm",
+      },
+      lg: {
+        width: "$auto",
+        padding: "$3",
+        fontSize: "$lg",
+      },
+      xlg: {
+        width: "$auto",
+        padding: "$4",
+        fontSize: "$xl",
+      },
+    },
+  },
 });
 
-export function DialogModal() {
+export interface DialogModalProps {
+  titleDialog: string;
+  descriptionDialog: string;
+  buttonTextDialog: string;
+  firstOptionDialog: string;
+  closeOptionDialog: string;
+}
+
+export function DialogModal({
+  titleDialog,
+  descriptionDialog,
+  buttonTextDialog,
+  firstOptionDialog,
+  closeOptionDialog,
+}: DialogModalProps) {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className={button({ color: "blue" })}>
-        Confirm
+      <Dialog.Trigger className={button({ color: "blue", variant: "outline" })}>
+        {buttonTextDialog}
       </Dialog.Trigger>
       <Dialog.Overlay className={overlay()} />
       <Dialog.Content className={content()}>
-        <Dialog.Title className={title()}>Confirm this action</Dialog.Title>
+        <Dialog.Title className={title()}>{titleDialog}</Dialog.Title>
         <Dialog.Description className={description()}>
-          Do you sure confirm this action?
+          {descriptionDialog}
         </Dialog.Description>
         <Flex alignItems="center" justifyContent="end" gap="sm">
-          <Button color="blue" rounded="sm">
-            Send
+          <Button color="blue" rounded="sm" size="sm">
+            {firstOptionDialog}
           </Button>
-          <Dialog.Close className={buttonClose()}>Cancel</Dialog.Close>
+          <Dialog.Close className={buttonClose({ size: "sm" })}>
+            {closeOptionDialog}
+          </Dialog.Close>
         </Flex>
       </Dialog.Content>
     </Dialog.Root>

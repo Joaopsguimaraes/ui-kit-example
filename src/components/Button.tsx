@@ -1,19 +1,5 @@
 import { styled } from "../styles/Theme";
 
-export interface ButtonProps{
-  label?: string;
-  variant?: "solid" | "outline" | "ghost";
-  size?: "sm" | "lg" | "xlg";
-  color?: "blue" | "gray" | "indigo";
-  rounded?: "none" | "sm" | "lg" | "xs" | "full";
-  shadow?: "sm" | "md" | "lg" | "xl";
-  width?: "sm" | "md" | "lg" | "xlg" | "auto" | "full";
-  children?: React.ReactNode;
-  style?: any;
-
-}
-
-
 export const ButtonStyle = styled("button", {
   width: "$auto",
   cursor: "pointer",
@@ -21,8 +7,8 @@ export const ButtonStyle = styled("button", {
   fontSize: "$md",
   fontWeight: "$regular",
   fontFamily: "$roboto",
-  display:"flex",
-  alignItems:"center",
+  display: "flex",
+  alignItems: "center",
   gap: "0.25rem",
   variants: {
     size: {
@@ -45,17 +31,17 @@ export const ButtonStyle = styled("button", {
     color: {
       blue: {
         background: "$blue3",
-        color: "$blue12",
-        borderColor: "$blue7",
+        color: "$blue11",
+        borderColor: "$blue8",
         borderWidth: "$thick",
         borderStyle: "$solid",
         "&:hover , &:focus": {
           background: "$blue5",
-          borderColor: "$blue8",
+          borderColor: "$blue9",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
-        }
+        },
       },
       gray: {
         background: "$gray3",
@@ -69,7 +55,7 @@ export const ButtonStyle = styled("button", {
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
-        }
+        },
       },
       indigo: {
         background: "$indigo3",
@@ -83,23 +69,7 @@ export const ButtonStyle = styled("button", {
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
-        }
-      }
-    },
-    variant: {
-      solid:{
-
-      },
-      outline: {
-        background: "none",
-      },
-      ghost: {
-        background: "none",
-        border: "none",
-        fontWeight:"$bold",
-        "&:hover, &:focus": {
-          border: "none",
-        }
+        },
       },
     },
     rounded: {
@@ -117,6 +87,25 @@ export const ButtonStyle = styled("button", {
       },
       full: {
         borderRadius: "$full",
+      },
+    },
+    variant: {
+      solid: {},
+      outline: {
+        background: "none",
+      },
+      ghost: {
+        background: "none",
+        fontWeight: "$bold",
+        borderRadius: "none",
+        borderTop: "none",
+        borderLeft: "none",
+        borderRight: "none",
+        "&:hover, &:focus": {
+          borderTop: "none",
+          borderLeft: "none",
+          borderRight: "none",
+        },
       },
     },
     shadow: {
@@ -310,17 +299,27 @@ export const ButtonStyle = styled("button", {
   },
 });
 
-export function Button({label, variant, size, color, rounded, children}:ButtonProps){
-  return(
-    <ButtonStyle
-      variant={variant}
-      size={size}
-      color={color}
-      rounded={rounded}
-    >
-      {label}
+export interface ButtonProps {
+  variant?: "solid" | "outline" | "ghost";
+  size?: "sm" | "lg" | "xlg";
+  color?: "blue" | "gray" | "indigo";
+  rounded?: "none" | "sm" | "lg" | "xs" | "full";
+  shadow?: "sm" | "md" | "lg" | "xl";
+  width?: "sm" | "md" | "lg" | "xlg" | "auto" | "full";
+  children?: React.ReactNode;
+  style?: any;
+};
+
+export function Button({
+  variant,
+  size,
+  color,
+  rounded,
+  children,
+}: ButtonProps) {
+  return (
+    <ButtonStyle variant={variant} size={size} color={color} rounded={rounded}>
       {children}
     </ButtonStyle>
-  )
+  );
 }
-

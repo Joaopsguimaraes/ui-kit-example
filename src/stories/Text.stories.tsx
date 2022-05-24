@@ -4,28 +4,26 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Text, TextProps } from "../components/Text";
 
 export default {
-  // 👇 The title prop is optional.
-  title: "Text",
+  title: "Components/Text",
   component: Text,
 } as ComponentMeta<typeof Text>;
 
-//👇 We create a “template” of how args map to rendering
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: "Lorem Ipsum",
+  children:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
   fontFamily: "robot",
-  size:"md"
+  size: "md",
 };
 
 export const Secondary = Template.bind({});
 
 Secondary.args = {
-    label: "Lorem Ipsum",
-    fontFamily: "poppins",
-    size: "lg",
-    bold:"true"
-
-}
+  children:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in",
+  fontFamily: "poppins",
+  size: "lg",
+};

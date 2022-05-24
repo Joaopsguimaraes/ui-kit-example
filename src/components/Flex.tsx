@@ -1,6 +1,6 @@
 import { styled } from "../styles/Theme";
 
-export const Flex = styled("div", {
+export const FlexStyle = styled("div", {
   display: "flex",
   variants: {
     flexDirection: {
@@ -52,7 +52,7 @@ export const Flex = styled("div", {
       start: {
         justifyContent: "flex-start",
       },
-      end:{
+      end: {
         justifyContent: "flex-end",
       },
       center: {
@@ -86,6 +86,9 @@ export const Flex = styled("div", {
       xlg: {
         gap: "$16",
       },
+      none:{
+        gap: "0"
+      }
     },
     width: {
       sm: {
@@ -257,3 +260,45 @@ export const Flex = styled("div", {
     },
   },
 });
+
+export interface FlexProps {
+  flexDirection?: "row" | "column";
+  alignItems?: "stretch" | "center" | "start" | "end" | "baseline";
+  alignContent?:
+    | "stretch"
+    | "center"
+    | "start"
+    | "end"
+    | "spaceBetween"
+    | "spaceAround";
+  justifyContent?: "start" | "end" | "center" | "spaceBetween" | "spaceAround";
+  flexWrap?: "wrap" | "nowrap";
+  gap?: "sm" | "md" | "lg" | "xlg" | "none";
+  width?: "sm" | "md" | "lg" | "xlg" | "full" | "100vw";
+  children?: React.ReactNode;
+}
+
+export function Flex({
+  flexDirection,
+  alignItems,
+  alignContent,
+  justifyContent,
+  flexWrap,
+  gap,
+  width,
+  children,
+}: FlexProps) {
+  return (
+    <FlexStyle
+      flexDirection={flexDirection}
+      alignItems={alignItems}
+      justifyContent={justifyContent}
+      alignContent={alignContent}
+      flexWrap={flexWrap}
+      gap={gap}
+      width={width}
+    >
+      {children}
+    </FlexStyle>
+  );
+}

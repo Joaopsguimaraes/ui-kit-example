@@ -12,7 +12,6 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import imgHome from "./assets/media.svg";
 import logoHome from "./assets/logo.svg";
-import { DialogModal } from "./components/Dialog";
 
 
 export function Home() {
@@ -64,8 +63,8 @@ export function Home() {
           <Heading
             color="gray"
             size="lg"
-            marginBottom={2}
             textAlign="center"
+            marginBottom={2}
           >
             CREATE YOURS APP WITH{" "}
             <Span color="blue" fontWeight="bold">
@@ -89,9 +88,6 @@ export function Home() {
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
             <img
               src={imgHome}
@@ -121,7 +117,7 @@ export function Home() {
               color="blue"
               size="lg"
               rounded="sm"
-              shadow="sm"
+              shadow="md"
               variant="outline"
             >
               <GithubLogo size={22} />
