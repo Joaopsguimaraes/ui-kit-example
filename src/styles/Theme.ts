@@ -50,6 +50,7 @@ export const { styled, css } = createStitches({
             roboto: "'Roboto', sans-serif",
         },
         fontWeights:{
+            Thin:"100",
             regular: "400",
             medium: "500",
             bold: "700",

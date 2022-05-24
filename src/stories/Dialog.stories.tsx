@@ -15,6 +15,6 @@ Primary.args = {
     buttonTextDialog:"Open",
     titleDialog:"Title Lorem Ips",
     descriptionDialog:"Lorem Ipsum dolor sit amet, consectetur adip", 
-    firstOptionDialog:"SEND",
-    closeOptionDialog:"CLOSE"   
+    actionOptionDialog:"Yes, send this message",
+    closeOptionDialog:"Cancel"   
 };

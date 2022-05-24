@@ -31,6 +31,7 @@ export const title = css({
 
 export const description = css({
   fontSize: "$md",
+  fontWeight: "$Thin",
   fontFamily: "$roboto",
   marginY: "1rem",
 });
@@ -59,14 +60,14 @@ export const button = css({
         },
       },
       gray: {
-        background: "$gray3",
+        background: "$gray2",
         color: "$gray12",
-        borderColor: "$gray6",
+        borderColor: "$gray8",
         borderWidth: "$thick",
         borderStyle: "$solid",
         "&:hover, &:focus": {
           background: "$gray5",
-          borderColor: "$gray8",
+          borderColor: "$gray9",
           borderWidth: "$thick",
           borderStyle: "$solid",
           transition: "$true",
@@ -155,7 +156,7 @@ export interface DialogModalProps {
   titleDialog: string;
   descriptionDialog: string;
   buttonTextDialog: string;
-  firstOptionDialog: string;
+  actionOptionDialog: string;
   closeOptionDialog: string;
 }
 
@@ -163,12 +164,12 @@ export function DialogModal({
   titleDialog,
   descriptionDialog,
   buttonTextDialog,
-  firstOptionDialog,
+  actionOptionDialog,
   closeOptionDialog,
 }: DialogModalProps) {
   return (
     <Dialog.Root>
-      <Dialog.Trigger className={button({ color: "blue", variant: "outline" })}>
+      <Dialog.Trigger className={button({ color: "gray"})}>
         {buttonTextDialog}
       </Dialog.Trigger>
       <Dialog.Overlay className={overlay()} />
@@ -178,12 +179,12 @@ export function DialogModal({
           {descriptionDialog}
         </Dialog.Description>
         <Flex alignItems="center" justifyContent="end" gap="sm">
-          <Button color="blue" rounded="sm" size="sm">
-            {firstOptionDialog}
-          </Button>
           <Dialog.Close className={buttonClose({ size: "sm" })}>
             {closeOptionDialog}
           </Dialog.Close>
+          <Button color="blue" rounded="sm" size="sm" >
+            {actionOptionDialog}
+          </Button>
         </Flex>
       </Dialog.Content>
     </Dialog.Root>
